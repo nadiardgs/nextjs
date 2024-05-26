@@ -6,7 +6,8 @@ export async function GET(request: Request) {
     const result =
       await sql`CREATE TABLE User (Id INT GENERATED ALWAYS AS IDENTITY, Name VARCHAR(25) NOT NULL, Password VARCHAR(25) NOT NULL, PRIMARY KEY(Id) );`;
     return NextResponse.json({ result }, { status: 200 });
-  } catch (error) {
+  } 
+  catch (error) {
     return NextResponse.json({ error }, { status: 500 });
   }
 }
